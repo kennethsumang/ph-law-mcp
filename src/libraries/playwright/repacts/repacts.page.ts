@@ -1,28 +1,11 @@
-import { chromium, Page } from 'playwright';
+import CommonPage from '../common/common.page.js';
 
 /**
  * Republic Act Page Object Model
  * This class represents the page object model for interacting with Republic Act pages.
  * It encapsulates the page and provides methods to interact with it.
  */
-export default class RepublicActPage {
-  page: Page | undefined;
-
-  constructor(page : Page) {
-    this.page = page;
-  }
-
-  /**
-   * Create an instance of RepublicActPage
-   * @returns {Promise<RepublicActPage>} An instance of RepublicActPage
-   */
-  static async createInstance() {
-    const browser = await chromium.launch({ headless: true });
-    const context = await browser.newContext();
-    const page = await context.newPage();
-    return new RepublicActPage(page);
-  }
-
+export default class RepublicActPage extends CommonPage{
   /**
    * Go to the Republic Act page
    */
@@ -46,9 +29,5 @@ export default class RepublicActPage {
   async getRepublicActContents() : Promise<string> {
     const textContent = await this.page!.locator('body > center > table > tbody > tr:nth-child(4) > td > blockquote').textContent();
     return textContent || '';
-  }
-
-  async close() : Promise<void> {
-    await this.page?.context().browser()?.close();
   }
 }

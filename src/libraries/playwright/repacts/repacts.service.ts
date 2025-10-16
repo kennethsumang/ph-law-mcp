@@ -1,4 +1,3 @@
-import { Page } from "playwright"
 import RepublicActPage from "./repacts.page.js";
 
 /**
@@ -19,7 +18,7 @@ export default class RepublicActService {
    */
   static async createInstance() : Promise<RepublicActService> {
     const republicActPage = await RepublicActPage.createInstance();
-    return new RepublicActService(republicActPage);
+    return new RepublicActService(republicActPage as RepublicActPage);
   }
 
   /**

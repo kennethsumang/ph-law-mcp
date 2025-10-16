@@ -10,9 +10,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc && mcp-build",
+    "build": "tsc && npm run copy-assets && mcp-build",
     "watch": "tsc --watch",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "copy-assets": "mkdir -p dist/libraries/playwright/constitution && cp src/libraries/playwright/constitution/constitution.md dist/libraries/playwright/constitution/"
   },
   "dependencies": {
     "mcp-framework": "^0.2.2",

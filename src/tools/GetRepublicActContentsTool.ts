@@ -13,7 +13,7 @@ class GetRepublicActContentsTool extends MCPTool<GetRepublicActContentsToolInput
   schema = {
     message: {
       type: z.string(),
-      description: "Message to process",
+      description: "Republic Act number to get the contents of (e.g., 'Republic Act No. 10931' or 'RA 10931')",
     },
   };
 
