@@ -1,0 +1,14 @@
+node_modules
+dist
+.env
+logs
+.DS_Store
+.idea
+.vscode
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/

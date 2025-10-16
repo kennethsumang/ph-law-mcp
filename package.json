@@ -1,0 +1,29 @@
+{
+  "name": "ph-law-mcp",
+  "version": "0.0.1",
+  "description": "ph-law-mcp MCP server",
+  "type": "module",
+  "bin": {
+    "ph-law-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && mcp-build",
+    "watch": "tsc --watch",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "mcp-framework": "^0.2.2",
+    "playwright": "^1.56.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^20.11.24",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.19.0"
+  }
+}
